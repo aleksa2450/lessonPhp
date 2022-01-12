@@ -51,7 +51,5 @@ echo $a."</br>";
 echo $b."</br>";
 echo $c."</br>";
 echo $d."</br>";
-var_dump($e);
-//2 вариант вывода объекта
 echo $e->scalar;
 
