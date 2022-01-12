@@ -53,3 +53,24 @@ echo $c."</br>";
 echo $d."</br>";
 echo $e->scalar;
 
+//4 Сомнения в правильности выполнения(не хватает подробностей)
+
+$st="1231Строка";
+$boo = true;
+$bo="0";
+//var_dump в этом задании для самоконтроля
+settype($st, "integer");
+var_dump($st);
+settype($st, "float");
+var_dump($st);
+settype($boo, "string");
+var_dump($boo);
+settype($boo, "object");
+var_dump($boo);
+settype($st, "array");
+var_dump($st);
+settype($bo, "boolean");
+var_dump($bo);
+
+
+
