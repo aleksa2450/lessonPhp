@@ -2,16 +2,5 @@
 declare(strict_types=1);
 error_reporting(-1);
 
-echo "hello world";
-echo "hello 132";
-echo "1234"
+// $a = [1,2,3,4,5,6,7,8,9,10]
 
-/*
-
- git status
-
-git add .
-git commit -am 'first commit'
-
-git push
-*/
