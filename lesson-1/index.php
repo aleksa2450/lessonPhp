@@ -32,7 +32,7 @@ $b = $a - $b - $c;
 $c = $a - $b - $c;
 $a = $a - $b - $c;
 
-echo "a = $a, b = $b, c = $c" ."\n";
+echo "a = $a, b = $b, c = $c"."\n";
 
 /*
 3.
@@ -46,11 +46,11 @@ $d = true;
 $arr[] = 100;
 $e = (object)"это объект";
 
-echo $arr[0] ."</br>";
-echo $a ."</br>";
-echo $b ."</br>";
-echo $c ."</br>";
-echo $d ."</br>";
+echo $arr[0]."</br>"."\n";
+echo $a."</br>"."\n";
+echo $b."</br>"."\n";
+echo $c."</br>"."\n";
+echo $d."</br>"."\n";
 echo $e->scalar;
 
 //4 Сомнения в правильности выполнения(не хватает подробностей)
