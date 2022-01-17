@@ -62,6 +62,13 @@ echo ucfirst($string);
 //
 
 $strI = ucfirst($string);
-echo "{$strI}";
+echo "{$strI}" . PHP_EOL;
 
+/*
+6.
+Дана строка 'HELLO'.
+Сделайте из нее строку 'Hello'.
+*/
 
+$string = 'HELLO';
+echo ucfirst(strtolower($string));
