@@ -1,6 +1,6 @@
 <?php
 
-// 1. Дана строка 'hello'. Сделайте из нее строку 'HELLO'.
+// 1 ЗАДАНИЕ: дана строка 'hello'. Сделайте из нее строку 'HELLO'.
 
 $stringOne = 'hello';
 
@@ -13,7 +13,7 @@ echo strtoupper($stringOne) . PHP_EOL;
 $stringHello = (strtoupper($stringOne));
 echo "{$stringHello}" . PHP_EOL;
 
-// 2. Дана строка 'HELLO'. Сделайте из нее строку 'hello'.
+// 2 ЗАДАНИЕ: дана строка 'HELLO'. Сделайте из нее строку 'hello'.
 
 $stringTwo = 'HELLO';
 // 1 вариант
@@ -25,7 +25,7 @@ echo (strtolower($stringTwo)) . PHP_EOL;
 $stringHello = strtolower($stringTwo);
 echo "{$stringHello}" . PHP_EOL;
 
-//3. Дана строка 'hello'. Сделайте из нее строку 'Hello'.
+//3 ЗАДАНИЕ: дана строка 'hello'. Сделайте из нее строку 'Hello'.
 
 $string = 'hello';
 
@@ -38,7 +38,7 @@ echo "{$stringH}" . PHP_EOL;
 
 echo ucfirst($string) . PHP_EOL;
 
-//Дана строка 'Hello'. Сделайте из нее строку 'hello'.
+// 4 ЗАДАНИЕ: дана строка 'Hello'. Сделайте из нее строку 'hello'.
 $string = 'Hello1';
 
 //1 вариант
@@ -49,3 +49,19 @@ echo "{$strh}" . PHP_EOL;
 //2 вариант
 
 echo lcfirst($string) . PHP_EOL;
+
+/*
+5.
+Дана строка 'i am learning programming'.
+Сделайте из нее строку 'I am learning programming'
+*/
+
+$string = 'i am learning programming' . PHP_EOL;
+echo ucfirst($string);
+
+//
+
+$strI = ucfirst($string);
+echo "{$strI}";
+
+
