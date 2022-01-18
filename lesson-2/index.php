@@ -94,3 +94,12 @@ echo $strResult[0] . PHP_EOL;
 echo $strResult[1] . PHP_EOL;
 echo $strResult[2] . PHP_EOL;
 echo $strResult[3] . PHP_EOL;
+
+/*
+9.
+Дана строка. Вырежите и выведите на экран последние
+3 символа этой строки. $string = '123456789'
+ */
+
+$string = '123456789';
+echo substr($string, -3) . PHP_EOL;
