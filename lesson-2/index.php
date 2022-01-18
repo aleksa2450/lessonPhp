@@ -103,3 +103,9 @@ echo $strResult[3] . PHP_EOL;
 
 $string = '123456789';
 echo substr($string, -3) . PHP_EOL;
+
+//10.
+//Дана строка '01.01.2022'. Замените все точки на дефисы
+
+$string = '01.01.2022';
+echo str_replace(".", "-", $string) . PHP_EOL;
