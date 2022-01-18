@@ -126,6 +126,6 @@ print_r($stringRes);
 'js'. Создайте строку из этих элементов, разделенных запятыми.
  */
 
-$a = ["html", "css", "php"];
+$a = ['html', 'css', 'php'];
 
 print_r(implode(', ', $a)) . PHP_EOL;
