@@ -53,15 +53,15 @@ echo lcfirst($string) . PHP_EOL;
 /*
 5.
 Дана строка 'i am learning programming'.
-Сделайте из нее строку 'I am learning programming'
+Сделайте из нее строку 'I am Learning Programming'
 */
 
 $string = 'i am learning programming' . PHP_EOL;
-echo ucfirst($string);
+echo ucwords($string);
 
 //
 
-$strI = ucfirst($string);
+$strI = ucwords($string);
 echo "{$strI}" . PHP_EOL;
 
 /*
@@ -71,4 +71,14 @@ echo "{$strI}" . PHP_EOL;
 */
 
 $string = 'HELLO';
-echo ucfirst(strtolower($string));
+echo ucfirst(strtolower($string)) . PHP_EOL;
+/*
+7. Дана строка 'html css php js'.
+Найдите количество символов в этой строке.
+*/
+
+$string = 'html css php js';
+echo "Кол-во символов в строке включая пробелы =" . strlen($string) . PHP_EOL;
+
+
+
