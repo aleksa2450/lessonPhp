@@ -120,4 +120,12 @@ $string = 'html css php js';
 $stringRes = str_split($string, 4);
 print_r($stringRes);
 
+/*
+12.
+Дан массив с элементами 'html', 'css', 'php',
+'js'. Создайте строку из этих элементов, разделенных запятыми.
+ */
 
+$a = ["html", "css", "php"];
+
+print_r(implode(', ', $a)) . PHP_EOL;
