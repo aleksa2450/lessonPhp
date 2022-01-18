@@ -108,4 +108,16 @@ echo substr($string, -3) . PHP_EOL;
 //Дана строка '01.01.2022'. Замените все точки на дефисы
 
 $string = '01.01.2022';
-echo str_replace(".", "-", $string) . PHP_EOL;
+echo str_replace('.', '-', $string) . PHP_EOL;
+
+/*
+11.
+Дана строка 'html css php js'.
+Запишите каждое слово этой строки в отдельный элемент массива.
+ */
+
+$string = 'html css php js';
+$stringRes = str_split($string, 4);
+print_r($stringRes);
+
+
