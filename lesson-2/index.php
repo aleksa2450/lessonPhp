@@ -89,7 +89,7 @@ echo "Кол-во символов в строке включая пробелы
 
 $string = 'html css php js';
 $strResult = explode(" ", $string);
-
+var_dump($strResult);
 echo $strResult[0] . PHP_EOL;
 echo $strResult[1] . PHP_EOL;
 echo $strResult[2] . PHP_EOL;
@@ -129,3 +129,18 @@ print_r($stringRes);
 $a = ['html', 'css', 'php'];
 
 print_r(implode(', ', $a)) . PHP_EOL;
+
+/*
+14.
+Дана строка '1234567890'.
+Разбейте ее на массив с элементами '12', '34', '56', '78', '90'
+ */
+
+$string = '1234567890';
+print_r(str_split($string, 2)) . PHP_EOL;
+
+/*
+1.5.
+Дана строка '1234567890'. Разбейте ее на массив с элементами
+'1', '2', '3', '4', '5', '6', '7', '8', '9', '0'.
+ */
