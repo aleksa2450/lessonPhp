@@ -73,12 +73,24 @@ echo "{$strI}" . PHP_EOL;
 $string = 'HELLO';
 echo ucfirst(strtolower($string)) . PHP_EOL;
 /*
-7. Дана строка 'html css php js'.
+7.
+Дана строка 'html css php js'.
 Найдите количество символов в этой строке.
 */
 
 $string = 'html css php js';
 echo "Кол-во символов в строке включая пробелы =" . strlen($string) . PHP_EOL;
 
+/*
+8.
+Дана строка 'html css php js'. Вырежьте из нее и выведите
+на экран слово 'html', слово 'css' и слово 'php', и 'js'.
+ */
 
+$string = 'html css php js';
+$strResult = explode(" ", $string);
 
+echo $strResult[0] . PHP_EOL;
+echo $strResult[1] . PHP_EOL;
+echo $strResult[2] . PHP_EOL;
+echo $strResult[3] . PHP_EOL;
