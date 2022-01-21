@@ -205,3 +205,23 @@ echo "Сумма элементов массива(a) = " . array_sum($array) . 
 $array = [1, 2, 3, 4, 5];
 $arrayProduct = array_product($array);
 echo "произведение элементов массива(array) = " . $arrayProduct . PHP_EOL;
+
+/*
+8.
+Дан массив $arr. С помощью функций array_sum и count
+ найдите среднее арифметическое элементов
+ */
+
+$arr = [1, 2, 3, 4, 5];// сред арифм = 3
+
+$arrSum = array_sum($arr);
+$n = count($arr);
+//var_dump($n);
+$srAr = $arrSum / $n;
+
+echo $srAr . PHP_EOL;
+
+echo "ср ар = " . array_sum($arr) / count($arr) . PHP_EOL;
+
+echo " = " . intdiv($arrSum, $n) . PHP_EOL; 
+
