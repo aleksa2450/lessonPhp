@@ -238,3 +238,14 @@ $a = array_sum(range(1,100));
 $arrayRange = range(1,100);
 $arraySum = array_sum($arrayRange);
 echo $arraySum . PHP_EOL;
+
+/*
+11.
+Дан массив с элементами 1, 2, 3, 4, 5. Создайте из него массив
+$result с элементами 2, 3, 4, найти функцию которая это может сделать.
+ */
+
+$array = [1, 2, 3, 4, 5];
+$result = array_slice($array, 1, 3);
+//var_dump($result);
+print_r($result);
