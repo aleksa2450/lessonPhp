@@ -223,5 +223,18 @@ echo $srAr . PHP_EOL;
 
 echo "ср ар = " . array_sum($arr) / count($arr) . PHP_EOL;
 
-echo " = " . intdiv($arrSum, $n) . PHP_EOL; 
+echo " = " . intdiv($arrSum, $n) . PHP_EOL;
 
+/*
+9.
+Создайте строку '1-2-3-4-5-6-7-8-9' не используя цикл
+*/
+
+//10. Найдите сумму чисел от 1 до 100 не используя цикл
+
+$a = array_sum(range(1,100));
+//var_dump($a);
+
+$arrayRange = range(1,100);
+$arraySum = array_sum($arrayRange);
+echo $arraySum . PHP_EOL;
