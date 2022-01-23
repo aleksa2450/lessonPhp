@@ -128,7 +128,24 @@ print_r($stringRes);
 
 $a = ['html', 'css', 'php'];
 
-print_r(implode(', ', $a)) . PHP_EOL;
+print_r(implode(', ', $a)) ;
+
+/*
+13.
+В переменной $date лежит дата в формате '2022-01-01'.
+Преобразуйте эту дату в формат '01.01.2022'.
+ */
+
+$date = '2022-01-01';
+
+echo implode('.', array_reverse(explode('-', $date)));
+
+$date = explode('-', $date);
+$date = array_reverse($date);
+var_dump($date);
+$date = implode('.', $date);
+
+echo $date . PHP_EOL;
 
 /*
 14.
@@ -137,7 +154,7 @@ print_r(implode(', ', $a)) . PHP_EOL;
  */
 
 $string = '1234567890';
-print_r(str_split($string, 2)) . PHP_EOL;
+print_r(str_split($string, 2));
 
 /*
 15.
@@ -294,25 +311,22 @@ print_r(array_reverse($a));
  */
 
 $a = range(1, 25);
-var_dump(shuffle($a)) ;
-print_r(shuffle($a)) ; //сортирует массив но выводит true или false, других функций не нашёл
+shuffle($a);
+var_dump($a);
+//print_r(shuffle($a)) ; //сортирует массив но выводит true или false, других функций не нашёл
 
 /*
 15.
-15. Создайте массив, заполненный буквами от 'a' до 'z' так,
+ Создайте массив, заполненный буквами от 'a' до 'z' так,
  чтобы буквы шли в случайном порядке и не повторялись.
  найти функцию которая это может сделать.
  */
-$arr = (range('a', 'z'));
+$arr = range('a', 'z');
 
 shuffle($arr);
-
+print_r($arr);
 /*
    foreach ($arr as $value) {
     echo $value . " ";
 }
  */
-
-
-
-
