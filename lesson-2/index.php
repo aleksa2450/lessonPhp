@@ -231,12 +231,10 @@ echo " = " . intdiv($arrSum, $n) . PHP_EOL;
 */
 
 //1 вариант с массивом
-
 $a = [1, 2, 3, 4, 5, 6, 7, 8, 9];
 echo implode("-", $a) . PHP_EOL;
 
 //2 вариант со строкой
-
 $a = '123456789';
 echo implode('-', str_split($a)) . PHP_EOL;
 
