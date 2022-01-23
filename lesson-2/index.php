@@ -294,8 +294,8 @@ print_r(array_reverse($a));
  */
 
 $a = range(1, 25);
-var_dump(shuffle($a));
-print_r(shuffle($a)); //сортирует массив но выводит true или false, других функций не нашёл
+var_dump(shuffle($a)) ;
+print_r(shuffle($a)) ; //сортирует массив но выводит true или false, других функций не нашёл
 
 /*
 15.
@@ -303,6 +303,16 @@ print_r(shuffle($a)); //сортирует массив но выводит true
  чтобы буквы шли в случайном порядке и не повторялись.
  найти функцию которая это может сделать.
  */
+$arr = (range('a', 'z'));
+
+shuffle($arr);
+
+/*
+   foreach ($arr as $value) {
+    echo $value . " ";
+}
+ */
+
 
 
 
