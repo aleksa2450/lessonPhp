@@ -50,6 +50,7 @@ $filePath = __DIR__ . "/file2.txt";
 $handler = fopen($filePath, "a+");
 rename($filePath, "reFile.txt");
 
+
 //4. Сделать копию файла и скопировать в другую директорию.
 $filePath = __DIR__ . "/resource";
 copy("file.txt", "{$filePath}/test.txt");
@@ -94,7 +95,6 @@ if (!empty($_FILES)) {
 }
 
 ?>
-
 
 <div style="width:1000px;margin:150px auto 0 auto;">
 
