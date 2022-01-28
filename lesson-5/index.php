@@ -3,7 +3,6 @@ declare(strict_types=1);
 error_reporting(-1);
 
 
-
 //1. Создать файл, записать в него текст построчно.
 $handler = fopen("file.txt", 'w+');
 $filePath = __DIR__ . '/file.txt';
