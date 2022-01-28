@@ -55,6 +55,19 @@ rename($filePath, "reFile.txt");
 $filePath = __DIR__ . "/resource";
 copy("file.txt", "{$filePath}/test.txt");
 
+//5. Получить размер файла, и вывести его.
+
+function prnt($data)
+{
+    echo '<pre>';
+    print_r($data);
+    echo '</pre>';
+}
+$file = $_FILES['test'] ?? null;
+$fileSize = $file['size'] ?? null;
+prnt($file);
+echo "Размер файла: {$fileSize}";
+
 
 ?>
 
