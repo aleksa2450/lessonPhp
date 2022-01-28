@@ -35,17 +35,25 @@ fclose($handler);
 }*/
 
 //3 вариант
-/*if (file_exists($filePath)) {
-    $fileRead = file($filePath);
+/*$fileTest = __DIR__ . "test.txt";
+if (file_exists($filePath)) {
+    echo 'Файл найден!' . PHP_EOL;
+    $fileRead = file($filePath||$fileTest);
     foreach ($fileRead as $line) {
         echo $line;
     }
+} else {
+    echo "Файл не обнаружен!" . PHP_EOL;
 }*/
 
 //3. Переименовать файл.
 $filePath = __DIR__ . "/file2.txt";
 $handler = fopen($filePath, "a+");
 rename($filePath, "reFile.txt");
+
+//4. Сделать копию файла и скопировать в другую директорию.
+$filePath = __DIR__ . "/resource";
+copy("file.txt", "{$filePath}/test.txt");
 
 
 ?>
