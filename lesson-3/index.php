@@ -10,15 +10,3 @@ $c = 5;
 
 echo "hello";
 
-$a = [54, 12, 43, 65, 64];
-
-for ($j = 0; $j < count($a) - 1; $j++) {
-    for ($i = 0; $i < count($a) - $j - 1; $i++) {
-        if ($a[$i] > $a[$i + 1]) {
-            $tmpVar = $a[$i];
-            $a[$i] = $a[$i + 1];
-            $a[$i + 1] = $tmpVar;
-        }
-    }
-}
-print_r($a);
