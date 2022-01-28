@@ -12,6 +12,35 @@ for ($i = 1; $i <= 100; $i++) {
 }
 fclose($handler);
 
+/*
+2. Открыть файл, проверить на существование,
+считать файл. (тремя способами).
+*/
+
+//1 вариант
+/*if (file_exists($filePath)) {
+    $handler = fopen($filePath, 'rb+') or die ('Error open file');
+    if ($handler) {
+        while (false !== ($buffer = fgets($handler, 4096))){
+            echo $buffer;
+        }
+    }
+}*/
+
+//2 вариант
+/*if (file_exists($filePath)) {
+    $data = file_get_contents($filePath);
+    //$string = explode("\t\n", trim($data));
+    print_r($data);
+}*/
+
+//3 вариант
+/*if (file_exists($filePath)) {
+    $fileRead = file($filePath);
+    foreach ($fileRead as $line) {
+        echo $line;
+    }
+}*/
 
 
 
