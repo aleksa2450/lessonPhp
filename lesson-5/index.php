@@ -63,11 +63,36 @@ function prnt($data)
     print_r($data);
     echo '</pre>';
 }
+/*
 $file = $_FILES['test'] ?? null;
 $fileSize = $file['size'] ?? null;
 prnt($file);
-echo "Размер файла: {$fileSize}";
+echo "Размер файла: {$fileSize}";*/
 
+/*
+6. Создать форму загрузки файла, изображения.
+(сделать проверки на возможные ошибки загрузки,
+допустимый размер файла 1М.). Вывести загруженный файл.
+*/
+if (!empty($_FILES)) {
+    $whiteList = ['jpg', 'png', 'xlsx'];
+    $file = $_FILES['test'] ?? null;
+    $fileName = $file['name'] ?? null;
+    $fileExt = strtolower(pathinfo($fileName, PATHINFO_EXTENSION)) ?? null;
+    $fileTmp = $file['tmp_name'] ?? null;
+    $error = $file['error'] ?? null;
+    $fileSize = $file['size'] ?? null;
+
+    if ($error > 0) {
+        echo "Ошибка";
+    }elseif ($fileSize > 1024 * 1024) {
+        echo ("Файл слишком большой!");
+    }elseif (!in_array($fileExt, $whiteList)) {
+        echo("Неверное расширение файла");
+    } else {
+        prnt($file);
+    }
+}
 
 ?>
 
@@ -78,5 +103,6 @@ echo "Размер файла: {$fileSize}";
         <input type="file" name="test"><br>
         <button type="submit">Отправить</button>
     </form>
+    <img src="<?= $file?>" alt="почему не отображаюсь?"/>
 
 </div>
