@@ -42,8 +42,10 @@ fclose($handler);
     }
 }*/
 
-
-
+//3. Переименовать файл.
+$filePath = __DIR__ . "/file2.txt";
+$handler = fopen($filePath, "a+");
+rename($filePath, "reFile.txt");
 
 
 ?>
