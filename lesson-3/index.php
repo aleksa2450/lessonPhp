@@ -33,5 +33,55 @@ echo $result . PHP_EOL;
 
 $text1 = 'Привет, ';
 $text2 ='Мир!';
-echo $text1 . $text2;
+echo $text1 . $text2 . PHP_EOL;
+
+/*
+4. Создайте переменную $text и присвойте ей значение 'Hello world'.
+ Обращаясь к отдельным символам этой строки выведите на экран символ 'H',
+ символ 'e', символ 'l' и тд.
+ */
+
+$text = 'Hello world';
+
+// 1 вариант
+
+echo $text[0] . PHP_EOL;
+echo $text[1] . PHP_EOL;
+echo $text[2] . PHP_EOL;
+echo $text[3] . PHP_EOL;
+echo $text[4] . PHP_EOL;
+echo $text[6] . PHP_EOL;
+echo $text[7] . PHP_EOL;
+echo $text[8] . PHP_EOL;
+echo $text[9] . PHP_EOL;
+echo $text[10] . PHP_EOL;
+
+echo PHP_EOL;
+
+// 2 вариант
+
+$h = substr($text, 0, 1);
+echo $h . PHP_EOL;
+
+$e = substr($text, 1, 1);
+echo $e . PHP_EOL;
+
+$l = substr($text, 2, 1);
+echo $l . PHP_EOL;
+
+$o = substr($text, 4, 1);
+echo $o . PHP_EOL;
+
+echo PHP_EOL;
+
+$w = substr($text, 6, 1);
+echo $w . PHP_EOL;
+
+$r = substr($text, 8, 1);
+echo $r . PHP_EOL;
+
+$d = substr($text, 10, 1);
+echo $d . PHP_EOL;
+
+// 
 
