@@ -76,12 +76,12 @@ echo "Размер файла: {$fileSize}";*/
 */
 if (!empty($_FILES)) {
     $whiteList = ['jpg', 'png', 'xlsx'];
-    $file = $_FILES['test'] ?? null;
-    $fileName = $file['name'] ?? null;
-    $fileExt = strtolower(pathinfo($fileName, PATHINFO_EXTENSION)) ?? null;
-    $fileTmp = $file['tmp_name'] ?? null;
-    $error = $file['error'] ?? null;
-    $fileSize = $file['size'] ?? null;
+    $file = $_FILES['test'] ;
+    $fileName = $file['name'] ;
+    $fileExt = strtolower(pathinfo($fileName, PATHINFO_EXTENSION)) ;
+    $fileTmp = $file['tmp_name'] ;
+    $error = $file['error'] ;
+    $fileSize = $file['size'] ;
 
     if ($error > 0) {
         echo "Ошибка";
