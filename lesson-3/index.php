@@ -83,5 +83,14 @@ echo $r . PHP_EOL;
 $d = substr($text, 10, 1);
 echo $d . PHP_EOL;
 
-// 
+/*
+5. Дана произвольная строка, например, 'abcde'.
+Поменяйте первую букву (то есть букву 'a') этой строки на '!'
+ */
+
+// 1 вариант
+
+$text = 'abcde';
+$string = substr_replace($text, '!', '0', '1');
+echo $string;
 
