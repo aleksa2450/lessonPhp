@@ -11,7 +11,7 @@ function debug($data)
     echo'</pre>';
 }
 
-/*if (!empty($_FILES['image'])) {
+if (!empty($_FILES['image'])) {
     $file = $_FILES['image'];
     $fileName = $file['name'];
     $fileExt = strtolower(pathinfo($fileName, PATHINFO_EXTENSION));
@@ -51,7 +51,7 @@ function debug($data)
     }
     header("Location: page.php");
     die;
-}*/
+}
 
 
 //1.Задание
