@@ -139,4 +139,8 @@ echo $daysOfWeeks['ru'][1] . PHP_EOL;
 
 echo $daysOfWeeks['en'][1] . PHP_EOL;
 
+/*
+8. Используя оператор if напишите все логические операторы.
+ */
+
 
