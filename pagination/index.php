@@ -1,47 +1,49 @@
 <?php
 declare(strict_types=1);
 error_reporting(-1);
-require 'function.php';
+require __DIR__  . '/function.php';
 
-$getPage = getPage();
+$currentPage = currentPage();
+$perPage = 20; // Кол-во записей на странице
 
-$perPage = 20;
+$NumberOfRecordsFromDB = getNumberOfRecordsFromDB($dbh);
 
-$totalPage = totalPage($dbh);
+$countPage = countPage($NumberOfRecordsFromDB, $perPage);
+echo $countPage;
 
-$countPage = countPage($totalPage, $perPage);
+if ($currentPage > $countPage) {
+    $currentPage = $countPage;
+}
 
-CheckPageUrlId($getPage, $countPage);
-
-$limit = ($getPage - 1) * $perPage;
-
-$show = showList($dbh, $limit, $perPage);
+$limit = ($currentPage - 1) * $perPage;
+$RecordsFromDB = getRecordsFromDB($limit, $perPage, $dbh);
+print_r($RecordsFromDB);
+die;
 
 $i = 1;
 
-foreach ($show as $product) {
-        echo '#' . $i . " " . $product['productName'] . "<br>";
-        echo '----<br>';
-        $i++;
+foreach ($result as $value) {
+    echo "# {$i} {$value['product_name']}" . "<br>";
+    echo '------<br>';
+    $i++;
 }
 
-if ($getPage != 1) {
-    $prev = $getPage - 1;
+if ($page != 1) {
+    $prev = $page - 1;
     echo "<a href=\"?page={$prev}\" style=\"border:1px solid #ccc; padding:5px;\"> <<< </a> ";
 }
-
-for ($i = 1; $i <= countPage($totalPage, $perPage); $i++) {
-    if ($getPage == $i) {
+for ($i = 1; $i <= $countPage; $i++) {
+    if ($page == $i) {
         $class = ' style="border:1px solid #ccc;font-weight:bold;color:red;padding:5px;"';
     } else {
         $class = ' style="border:1px solid #ccc;padding:5px"';
     }
     echo "<a href=\"?page={$i}\"{$class}>{$i}</a> ";
 }
-
-$prev = ($getPage != $countPage) ? $getPage + 1 : $getPage;
+$prev = ($page != $countPage) ? $page + 1 : $page;
 echo "<a href=\"?page={$prev}\" style=\"border:1px solid #ccc;padding:5px\"> >>> </a>";
 echo '<div style="height:200px;"></div>';
+
 
 
 

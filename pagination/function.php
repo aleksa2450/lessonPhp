@@ -1,45 +1,36 @@
 <?php
 
 $dbh = new \PDO(
-    "mysql:host=localhost;dbname=pagination;charset=utf8",
-    'root',
-    '', [
-        \PDO::ATTR_ERRMODE => \PDO::ERRMODE_EXCEPTION,
-        \PDO::ATTR_DEFAULT_FETCH_MODE => \PDO::FETCH_ASSOC,
-        \PDO::MYSQL_ATTR_INIT_COMMAND => "SET NAMES 'utf8'",
-    ]
-);
+        "mysql:host=localhost;dbname=product;charset=utf8",
+        'root',
+        '', [
+            \PDO::ATTR_ERRMODE => \PDO::ERRMODE_EXCEPTION,
+            \PDO::ATTR_DEFAULT_FETCH_MODE => \PDO::FETCH_ASSOC,
+            \PDO::MYSQL_ATTR_INIT_COMMAND => "SET NAMES utf8",
+        ]
+    );
 
-function getPage()
+function currentPage()
 {
-   return $page = $_GET['page'] ?? 1;
+    $page = $_GET['page'] ?? 1;
+    echo "страница {$page}" . PHP_EOL;
 }
-
-function countPage($totalPage, $perPage)
+function getNumberOfRecordsFromDB($dbh)
 {
-    return $countPage = ceil($totalPage / $perPage) ?: 1;
-}
-
-function CheckPageUrlId($page, $countPage)
-{
-    if ($page > $countPage) {
-        $page = $countPage;
-    }
-    return $page;
-}
-
-function totalPage($dbh)
-{
-    $sth = $dbh->prepare('SELECT id FROM products LIMIT 2000');
+    $sth = $dbh->prepare("SELECT id from product");
     $sth->execute();
     return $sth->rowCount();
 }
 
-function showList($dbh, $limit, $perPage)
+function countPage($NumberOfRecordsFromDB, $perPage)
 {
-    $sth = $dbh->prepare(
-        "SELECT productName FROM products LIMIT {$limit}, {$perPage}"
-    );
+    return ceil($NumberOfRecordsFromDB / $perPage) ?: 1;
+}
+
+function getRecordsFromDB($limit, $perPage,$dbh)
+{
+    $sth = $dbh->prepare("SELECT * FROM post ORDER BY id DESC LIMIT {$limit}, {$perPage}");
     $sth->execute();
-    return $result = $sth->fetchAll();
+    return $sth->fetchAll();
+
 }
