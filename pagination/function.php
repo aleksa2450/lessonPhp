@@ -36,7 +36,7 @@ function displayRecordsFromDB($RecordsFromDB)
     }
 }
 
-function showNavigatingPages($currentPage, $countPage)
+function showNavigatingMenu($currentPage, $countPage)
 {
     //Левая стрелка
     if ($currentPage != 1) {

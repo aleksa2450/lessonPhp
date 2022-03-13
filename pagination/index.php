@@ -30,6 +30,6 @@ $RecordsFromDB = getRecordsFromDB($dbh, $limit, $perPage);
 
 displayRecordsFromDB($RecordsFromDB);
 
-showNavigatingPages($currentPage, $countPage);
+showNavigatingMenu($currentPage, $countPage);
 
 
