@@ -25,7 +25,7 @@ try {
     echo $e->getMessage();
 }
 
-for($i = 1; $i <= 10; $i++) {
+for ($i = 1; $i <= 10; $i++) {
     $price = mt_rand(400, 7500);
     $query = "INSERT INTO products SET product_name = 'product {$i}', price = '{$price}'";
     $dbh->query($query);
@@ -33,3 +33,9 @@ for($i = 1; $i <= 10; $i++) {
 
 $sth = $dbh->prepare("INSERT INTO products SET product_name = 'product 11', price = '0'");
 $sth->execute();
+
+for ($i = 12; $i <= 20; $i++) {
+    $price = mt_rand(15000, 25000);
+    $sth = $dbh->prepare("INSERT INTO products SET product_name = 'product {$i}', price = '{$price}'");
+    $sth->execute();
+}

@@ -35,7 +35,7 @@ $query = "SELECT * from products WHERE id > 0 ORDER BY id DESC LIMIT 1";
 foreach ($dbh->query($query) as $value) {
 
     //Вывод строкой
-    echo "{$value['product_name']} {$value['price']}";
+    echo "{$value['product_name']} {$value['price']}" . PHP_EOL;
 
     //Вывод массивом
     print_r($value);
