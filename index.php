@@ -2,49 +2,27 @@
 declare(strict_types=1);
 error_reporting(-1);
 
-$a = [3, 1, 2, 5, 4, ];
+$dbh = new \PDO(
+    'mysql:local=localhost;dbname=db-test;charset=utf8',
+    'root',
+    '', [
+        \PDO::ATTR_ERRMODE => \PDO::ERRMODE_EXCEPTION,
+        \PDO::ATTR_DEFAULT_FETCH_MODE => \PDO::FETCH_ASSOC,
+        \PDO::MYSQL_ATTR_INIT_COMMAND => "SET NAMES 'utf8'"
+    ]
+);
 
-$b = [2, ];
-function bubbleSort(array $a) : array
-{
-    $count = count($a);
+$filePath = __DIR__ . '/files/uploads.csv';
 
-    if ($count <= 1) {
-        return $a;
-    }
+$sth = $dbh->prepare("SELECT * FROM products");
+$sth->execute();
+$result = $sth->fetchAll();
 
-    for ($i = 0; $i < $count; $i++) {
-        for ($j = ($count - 1); $j > $i; $j--) {
-            if ($a[$j] < $a[$j - 1]) {
-                $tmpVar = $a[$j];
-                $a[$j] = $a[$j - 1];
-                $a[$j - 1] = $tmpVar;
-            }
-        }
-    }
-    return $a;
+$handle = fopen($filePath, 'w');
+
+foreach($result as $value) {
+    fputcsv($handle, $value, ';', '"');
 }
 
-print_r(bubbleSort($a));
+fclose($handle);
 
-function insertSort(array $a) : array
-{
-    $count = count($a);
-
-    if ($count <= 1) {
-        return $a;
-    }
-
-    for ($i = 1; $i < $count; $i++) {
-        $tmpVar = $a[$i];
-        $j = $i - 1;
-
-        while (isset($a[$j]) && $a[$j] > $tmpVar) {
-            $a[$j + 1] = $a[$j];
-            $a[$j] = $tmpVar;
-            $j--;
-        }
-    }
-    return $a;
-}
-print_r(insertSort($a));
