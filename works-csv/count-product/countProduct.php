@@ -16,16 +16,30 @@ $filePath = __DIR__ . '/updating-products.csv';
 
 $handle = fopen($filePath, 'rb') or die($php_errormsg);
 
-$a = [];
-
+$count['100-5000'] = 0;
+$count['5001-10000'] = 0;
+$count['10001-15000'] = 0;
+$count['15001-20000'] = 0;
 
 while (false != ($buffer = fgetcsv($handle, 4096, ';'))) {
-    print_r($buffer[2]);
-/*    if ($buffer[2] < 5000) {
-        $a['sum5000'] =
-    }*/
 
-
-    print_r($buffer);
+    if ($buffer[2] <= '5000') {
+        $count['100-5000'] += 1;
+    }
+    if ($buffer[2] > '5000' and $buffer[2] <= '10000' ) {
+        $count['5001-10000'] += 1;
+    }
+    if ($buffer[2] > '10000' and $buffer[2] <= '15000' ) {
+        $count['10001-15000'] += 1;
+    }
+    if ($buffer[2] > '15000' and $buffer[2] <= '20000' ) {
+        $count['15001-20000'] += 1;
+    }
 }
+
+print_r($count);
+
+
+
+
 

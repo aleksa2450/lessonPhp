@@ -20,8 +20,6 @@ while (false != ($buffer = fgetcsv($handle, 4096, ';'))) {
     $query = "SELECT id, title, price, quantity FROM products WHERE id =:id";
     $sth = $dbh->prepare($query);
     $sth->execute([":id" => $buffer[0]]);
-    print_r($buffer);
-    die;
     $product = $sth->fetch();
 
     $productCount = count($product);
@@ -67,3 +65,9 @@ foreach ($product as $value) {
     fputcsv($handle, $value, ';', '"');
 }
  */
+
+
+/* $query = "SELECT title, price FROM `products-co` WHERE id=:id";
+ $sth = $dbh->prepare($query);
+ $sth->execute([":id" => $buffer[0]]);
+ $product = $sth->fetch();*/
