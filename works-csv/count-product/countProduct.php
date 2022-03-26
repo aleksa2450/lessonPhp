@@ -21,17 +21,24 @@ $count['5001-10000'] = 0;
 $count['10001-15000'] = 0;
 $count['15001-20000'] = 0;
 
+$a = 0;
+$products[$a] = ['title' => '', 'price' => ''];
+
+
 while (false != ($buffer = fgetcsv($handle, 4096, ';'))) {
 
     if ($buffer[2] <= '5000') {
         $count['100-5000'] += 1;
     }
+
     if ($buffer[2] > '5000' and $buffer[2] <= '10000' ) {
         $count['5001-10000'] += 1;
     }
+
     if ($buffer[2] > '10000' and $buffer[2] <= '15000' ) {
         $count['10001-15000'] += 1;
     }
+
     if ($buffer[2] > '15000' and $buffer[2] <= '20000' ) {
         $count['15001-20000'] += 1;
     }
